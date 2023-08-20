@@ -1,1 +1,1 @@
-{"class": "playing", "text": "No Boilerplate - Hack your brain with Obsidian.md ", "tooltip": "Hack your brain with Obsidian.md\nby No Boilerplate\n(firefox.instance1076571)"}
+{"class": "none", "text": ""}

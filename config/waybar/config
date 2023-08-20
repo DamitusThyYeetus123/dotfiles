@@ -5,47 +5,20 @@
     // "width": 1280, // Waybar width
     "spacing": 5, // Gaps between modules (4px)
     // Choose the order of the modules
-    // "margin-left":25,
-    // "margin-right":25,
-    "margin-bottom":-11,
-    //"margin-top":5,
+    "margin-left":20,
+    "margin-right":20,
+    "margin-top":10,
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray","temperature","network","battery","custom/ss","custom/expand","cpu","clock"],
+    "modules-right": ["tray","temperature","network","battery","custom/ss","cpu","clock"],
     // Modules configuration
 
 
     // custom modules ////////////////
     "custom/ss":{
-        "format":"{}",
-        "exec":"~/.config/hypr/scripts/tools/expand ss-icon",
+        "format":"{icon}",
+        "format-icons":"",
         "on-click": "~/.config/hypr/scripts/screenshot"
     },
-    "custom/cycle_wall":{
-        "format":"{}",
-        "exec": "~/.config/hypr/scripts/tools/expand wall",
-        // "interval": 1,
-        "on-click": "~/.config/hypr/scripts/tools/expand cycle"
-    },
-    "custom/expand":{
-        "on-click":"~/.config/hypr/scripts/expand_toolbar",
-        "format":"{}",
-        "exec":"~/.config/hypr/scripts/tools/expand arrow-icon"
-    },
-    // "custom/waybar-mpris": {
-    //     "return-type": "json",
-    //     "exec": "echo '   '",
-    //     "on-click": "waybar-mpris --send toggle",
-    //     // This option will switch between players on right click.
-    //         "on-click-right": "waybar-mpris --send player-next",
-    //     // The options below will switch the selected player on scroll
-    //         // "on-scroll-up": "waybar-mpris --send player-next",
-    //         // "on-scroll-down": "waybar-mpris --send player-prev",
-    //     // The options below will go to next/previous track on scroll
-    //         // "on-scroll-up": "waybar-mpris --send next",
-    //         // "on-scroll-down": "waybar-mpris --send prev",
-    //     "escape": true
-    // },
-    //////////////////////////////////
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -170,17 +143,5 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
