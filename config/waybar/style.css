@@ -1,147 +1,106 @@
-{
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 50, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 5, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "margin-left":20,
-    "margin-right":20,
-    "margin-top":10,
-    "modules-left": ["wlr/workspaces"],
-    "modules-right": ["tray","temperature","network","battery","custom/ss","cpu","clock"],
-    // Modules configuration
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgb(43, 48, 59);
+    color: white;
+    border-radius: 25px;
+    
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 1);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
+    background: transparent;
+    color: white;
+    border-radius: 25px;
+    margin: 10px;
+    margin-right: 5px;
+}
 
 
-    // custom modules ////////////////
-    "custom/ss":{
-        "format":"{icon}",
-        "format-icons":"",
-        "on-click": "~/.config/hypr/scripts/screenshot"
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "wlr/workspaces": {
-        "format": "{icon}",
-        "format-active": " {icon} ",
-        "on-click": "activate"
-        // "format-icons":{
-        //     "10":"10"
-        // }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock": {
-        "timezone": "Australia/Melbourne",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "interval": 60,
-        "format": "{:%H:%M}",
-        "max-length": 25
-    },
-    "cpu": {
-        "interval":1,
-        "format": "{icon0} {icon1} {icon2} {icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C",
-        "format": ""
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            "warning": 50,
-            "critical": 20
-        },
-        "format": "{icon}",
-        "format-charging": "",
-        "format-plugged": "",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "",
-        "format-ethernet": "",
-        "tooltip-format": "via {gwaddr} {ifname}",
-        "format-linked": "",
-        "format-disconnected": "wifi",
-        "format-alt": "   "
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+#workspaces button.active {
+    background: rgb(228, 111, 146);
+    transition: all 0.1s ease-in-out;
+}
+#workspaces button.active:hover {
+    background: rgb(141, 68, 90);
+}
+#workspaces button:hover {
+    box-shadow: none;
+    text-shadow: none; 
+    background: rgb(25, 28, 34);
+    transition: all 0.1s ease-in-out; 
+}
+#mode, #clock, #battery {
+    padding: 0 20px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock {
+    background-color: #64727D;
+    border-radius: 25px;
+    margin: 10px
+}
+
+#battery {
+    background-color: #ffffff;
+    color: black;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
     }
 }
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-expand {
+   padding: 20px;
+}
+
+#custom-ss {
+    margin: 10px 5px;
+    padding: 10px;
+    background-color: #64727D;
+    border-radius: 25px;
+}
+
+#tray {
+    margin: 10px 5px;
+    padding: 10px;
+    background-color: #64727D;
+    border-radius: 25px;
+}
+
