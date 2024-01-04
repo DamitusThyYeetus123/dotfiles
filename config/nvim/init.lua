@@ -23,7 +23,21 @@ require("lazy").setup({{ "catppuccin/nvim", name = "catppuccin", priority = 1000
   config = function()
     require("nvim-tree").setup {}
   end,
-}})
+},{ "neovim/nvim-lspconfig", name= "lspconfig"},
+{
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  init = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+  end,
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+}
+})
 vim.cmd.colorscheme "catppuccin-mocha"
 
 require("nvim-tree").setup()
