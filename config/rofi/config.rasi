@@ -19,7 +19,7 @@ configuration {
 // Main //
 window {
     height:                      590px;
-    width:                       1048px;
+    width:                       900px;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -44,7 +44,7 @@ mainbox {
 // Inputs //
 inputbar {
     enabled:                     true;
-    width:                       540px;
+    width:                       450px;
     children:                    [ "mode-switcher" , "entry" ];
     background-color:            transparent;
     background-image:            url("~/.config/hypr/wallpapers/evening-sky.png.rofi", height);
