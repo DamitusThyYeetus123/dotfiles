@@ -1,4 +1,3 @@
-
 * {
     border: none;
     border-radius: 0;
@@ -8,7 +7,7 @@
 }
 
 window#waybar {
-    background: rgb(43, 48, 59);
+    background: rgba(43, 48, 59, 0);
     color: white;
     border-radius: 25px;
     
@@ -21,9 +20,18 @@ tooltip {
 tooltip label {
   color: white;
 }
-
+window .modules-left {
+    background: rgb(43, 48, 59);
+    border-radius: 25px;
+    padding-right: 5px; 
+}
+window .modules-right {
+    background: rgb(43, 48, 59);
+    border-radius: 25px;
+    padding-left: 5px; 
+}
 #workspaces button {
-    background: transparent;
+    background: #64727D;
     color: white;
     border-radius: 25px;
     margin: 10px;
@@ -91,7 +99,9 @@ tooltip label {
 }
 
 #custom-ss {
-    margin: 10px 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
     padding: 10px;
     background-color: #64727D;
     border-radius: 25px;
@@ -101,6 +111,5 @@ tooltip label {
     margin: 10px 5px;
     padding: 10px;
     background-color: #64727D;
-    border-radius: 25px;
+    border-radius: 25
 }
-
